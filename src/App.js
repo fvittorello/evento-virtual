@@ -1,5 +1,11 @@
+import { Header } from 'components/Header';
+
 function App() {
-	return <div style={{ fontSize: '1rem' }}>Evento Virtual</div>;
+	return (
+		<div>
+			<Header />
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,53 @@
+@import 'styles/variables';
+
+.header {
+	height: 350px;
+	width: auto;
+	background-color: #ffd6a8;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__category {
+		width: 88px;
+		height: 28px;
+		margin-top: 80px;
+		background: $colorOrange;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 3px;
+		font-family: $sourceSans;
+		font-size: $size13;
+		font-weight: 700;
+		color: $colorWhite;
+		text-transform: uppercase;
+		letter-spacing: 0.93px;
+	}
+
+	&__title {
+		margin-top: 26px;
+		font-size: $size40;
+		line-height: $size40;
+		font-family: $sourceSans;
+		color: $colorGreenStrong;
+	}
+
+	&__subtitle {
+		margin-top: 26px;
+		font-size: $size40;
+		line-height: $size40;
+		font-style: italic;
+		font-family: $sourceSans;
+		color: $colorGreenStrong;
+	}
+
+	&__text {
+		margin-top: 20px;
+		font-family: $sourceSans;
+		font-size: $size21;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: $colorGreenMedium;
+	}
+}
