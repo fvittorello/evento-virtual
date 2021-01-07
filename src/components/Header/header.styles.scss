@@ -1,7 +1,7 @@
 @import 'styles/variables';
 
 .header {
-	height: 350px;
+	height: 220px;
 	width: auto;
 	background-color: #ffd6a8;
 	display: flex;
@@ -11,7 +11,7 @@
 	&__category {
 		width: 88px;
 		height: 28px;
-		margin-top: 80px;
+		margin-top: 30px;
 		background: $colorOrange;
 		display: flex;
 		align-items: center;
@@ -26,28 +26,85 @@
 	}
 
 	&__title {
-		margin-top: 26px;
-		font-size: $size40;
-		line-height: $size40;
+		margin-top: $size16;
+		font-size: $size22;
+		line-height: $size22;
 		font-family: $sourceSans;
 		color: $colorGreenStrong;
 	}
 
 	&__subtitle {
-		margin-top: 26px;
-		font-size: $size40;
-		line-height: $size40;
+		margin-top: $size16;
+		font-size: $size22;
+		line-height: $size22;
 		font-style: italic;
 		font-family: $sourceSans;
 		color: $colorGreenStrong;
 	}
 
 	&__text {
-		margin-top: 20px;
+		margin-top: $size20;
 		font-family: $sourceSans;
-		font-size: $size21;
+		font-size: $size14;
 		font-weight: 600;
 		text-transform: uppercase;
 		color: $colorGreenMedium;
+	}
+}
+
+@media (min-width: 576px) {
+	.header {
+		height: 280px;
+
+		&__category {
+			width: 88px;
+			height: 28px;
+			margin-top: 40px;
+			font-size: $size13;
+		}
+
+		&__title {
+			margin-top: $size26;
+			font-size: $size32;
+		}
+
+		&__subtitle {
+			margin-top: $size16;
+			font-size: $size32;
+			line-height: $size32;
+		}
+
+		&__text {
+			margin-top: $size20;
+			font-size: $size21;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.header {
+		height: 350px;
+
+		&__category {
+			margin-top: 80px;
+			font-size: $size13;
+		}
+
+		&__title {
+			margin-top: 26px;
+			font-size: $size40;
+			line-height: $size40;
+		}
+
+		&__subtitle {
+			margin-top: 26px;
+			font-size: $size40;
+			line-height: $size40;
+		}
+
+		&__text {
+			margin-top: 20px;
+			font-size: $size21;
+		}
 	}
 }
