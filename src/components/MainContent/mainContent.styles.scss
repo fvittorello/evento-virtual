@@ -1,0 +1,10 @@
+@import 'styles/variables';
+
+.main-content {
+	width: 1140px;
+	margin: auto;
+	padding: 86px 0 93px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
