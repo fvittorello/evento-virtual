@@ -1,0 +1,40 @@
+@import 'styles/variables';
+
+@mixin containerMixin {
+	width: 593px;
+	height: 42px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.sponsors-container {
+	@include containerMixin;
+
+	&--bottom {
+		margin-top: 92px;
+		@include containerMixin;
+	}
+}
+
+.logo {
+	&-clusterfinanciero {
+		width: 89px;
+	}
+	&-asobanca {
+		width: 83px;
+	}
+	&-ibpf {
+		width: 69px;
+	}
+	&-hightelecom {
+		width: 137px;
+	}
+	&-ebanx {
+		width: 69px;
+	}
+	&-zendesk {
+		width: 78px;
+	}
+}
