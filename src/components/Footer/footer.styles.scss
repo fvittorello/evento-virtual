@@ -1,0 +1,34 @@
+@import 'styles/variables';
+
+.footer {
+	width: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: $colorWhiteBackground;
+
+	&__content {
+		width: 1140px;
+		max-width: 80vw;
+		height: 98px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__copyright {
+		font-family: $quicksand;
+		font-size: $size16;
+		color: $colorGreenSoft;
+	}
+}
+
+.bottom-line {
+	width: 1140px;
+	max-width: 80vw;
+	height: 1px;
+
+	border: 1px solid $colorGreySoft;
+	margin-bottom: 62px;
+}
