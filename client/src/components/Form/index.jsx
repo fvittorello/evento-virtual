@@ -16,6 +16,16 @@ export const Form = () => {
 	const [formState, setFormState] = useState(initialState);
 	const [errorState, setErrorState] = useState(initialState);
 
+	const { name, lastname, email, country, phone, position } = formState;
+	const {
+		name: errorName,
+		lastname: errorLastname,
+		email: errorEmail,
+		country: errorCountry,
+		phone: errorPhone,
+		position: errorPosition,
+	} = errorState;
+
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormState({ ...formState, [name]: value });
@@ -28,8 +38,8 @@ export const Form = () => {
 		if (!name || !lastname || !email || !country || !phone || !position) {
 			console.warn('Form has errors');
 		} else {
-			console.log(formState); // Send the form data to the DB
 			saveToLocalStorage(formState);
+			sendFormData(formState);
 		}
 	};
 
@@ -56,7 +66,23 @@ export const Form = () => {
 		localStorage.setItem('evento_virtual', JSON.stringify(oldData));
 	};
 
-	const { name, lastname, email, country, phone, position } = formState;
+	const sendFormData = (userData) => {
+		const myHeaders = new Headers();
+		myHeaders.append('Content-Type', 'application/json');
+		const jsonData = JSON.stringify(userData);
+
+		const requestOptions = {
+			method: 'POST',
+			headers: myHeaders,
+			body: jsonData,
+			redirect: 'follow',
+		};
+
+		fetch('http://localhost:5050/attendees', requestOptions)
+			.then((response) => response.text())
+			.then((result) => console.log(result))
+			.catch((error) => console.log('error', error));
+	};
 
 	return (
 		<div className='form-container'>
@@ -66,19 +92,19 @@ export const Form = () => {
 				<label className='form__label' htmlFor='name'>
 					Nombre
 					<input className='form__input' type='text' name='name' value={name} onChange={handleChange} />
-					{errorState.name ? <span className='form__error'>{errorState.name}</span> : null}
+					{errorName ? <span className='form__error'>{errorName}</span> : null}
 				</label>
 
 				<label className='form__label' htmlFor='lastname'>
 					Apellido
 					<input className='form__input' type='text' name='lastname' value={lastname} onChange={handleChange} />
-					{errorState.lastname ? <span className='form__error'>{errorState.lastname}</span> : null}
+					{errorLastname ? <span className='form__error'>{errorLastname}</span> : null}
 				</label>
 
 				<label className='form__label' htmlFor='email'>
 					Correo electrónico del trabajo
 					<input className='form__input' type='email' name='email' value={email} onChange={handleChange} />
-					{errorState.email ? <span className='form__error'>{errorState.email}</span> : null}
+					{errorEmail ? <span className='form__error'>{errorEmail}</span> : null}
 				</label>
 
 				<label className='form__label'>
@@ -109,19 +135,19 @@ export const Form = () => {
 							Venezuela
 						</option>
 					</select>
-					{errorState.country ? <span className='form__error'>{errorState.country}</span> : null}
+					{errorCountry ? <span className='form__error'>{errorCountry}</span> : null}
 				</label>
 
 				<label className='form__label' htmlFor='phone'>
 					Número de teléfono
 					<input className='form__input' type='text' name='phone' value={phone} onChange={handleChange} />
-					{errorState.phone ? <span className='form__error'>{errorState.phone}</span> : null}
+					{errorPhone ? <span className='form__error'>{errorPhone}</span> : null}
 				</label>
 
 				<label className='form__label' htmlFor='position'>
 					Puesto de trabajo
 					<input className='form__input' type='text' name='position' value={position} onChange={handleChange} />
-					{errorState.position ? <span className='form__error'>{errorState.position}</span> : null}
+					{errorPosition ? <span className='form__error'>{errorPosition}</span> : null}
 				</label>
 
 				<button className='form__button' type='submit'>
