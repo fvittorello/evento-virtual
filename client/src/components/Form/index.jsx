@@ -29,6 +29,7 @@ export const Form = () => {
 			console.warn('Form has errors');
 		} else {
 			console.log(formState); // Send the form data to the DB
+			saveToLocalStorage(formState);
 		}
 	};
 
@@ -47,6 +48,12 @@ export const Form = () => {
 			return 'Completa este campo';
 		}
 		return null;
+	};
+
+	const saveToLocalStorage = (data) => {
+		const oldData = JSON.parse(localStorage.getItem('evento_virtual')) || [];
+		oldData.push(data);
+		localStorage.setItem('evento_virtual', JSON.stringify(oldData));
 	};
 
 	const { name, lastname, email, country, phone, position } = formState;
