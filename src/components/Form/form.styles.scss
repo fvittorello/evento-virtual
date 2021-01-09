@@ -1,0 +1,82 @@
+@import 'styles/variables';
+
+.form-container {
+	width: 463px;
+	height: max-content;
+	padding: 2.375rem 3rem;
+	background: $colorWhiteBackground;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cta {
+	margin-bottom: 1.5rem;
+	font-family: $sourceSans;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: $colorGreenStrong;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&__label {
+		margin-top: 1.5rem;
+		font-family: $sourceSans;
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: $colorGreenStrong;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	}
+
+	&__input,
+	&__select {
+		height: 3.125rem;
+		border: solid 1px $colorGreyMedium;
+		font-family: $sourceSans;
+		font-size: 1.25rem;
+		padding: 0.625rem;
+		border-radius: 0.125rem;
+	}
+
+	&__select {
+		font-size: 1rem;
+
+		&--unselected {
+			color: $colorGreyMedium;
+		}
+	}
+
+	&__button {
+		height: 3.125rem;
+		margin-top: 2.25rem;
+		background: $colorGreenStrong;
+		color: $colorWhite;
+		border: none;
+		font-family: $sourceSans;
+		font-weight: 600;
+		font-size: 1.25rem;
+	}
+
+	&__error {
+		color: #e25151;
+		position: absolute;
+		bottom: -1.25rem;
+		font-family: $sourceSans;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
+}
+
+.select-option {
+	color: $colorGreenStrong;
+
+	&--default {
+		color: $colorGreyMedium;
+	}
+}
