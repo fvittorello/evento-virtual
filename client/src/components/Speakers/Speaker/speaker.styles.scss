@@ -27,16 +27,16 @@
 	&__name {
 		font-family: $sourceSans;
 		font-weight: 600;
-		font-size: $size20;
-		line-height: $size26;
+		font-size: 1.25rem;
+		line-height: 1.625rem;
 		color: $colorGreenStrong;
 	}
 
 	&__position {
 		font-family: $sourceSans;
 		font-weight: 400;
-		font-size: $size16;
-		line-height: $size26;
+		font-size: 1rem;
+		line-height: 1.625rem;
 		color: $colorGreenStrong;
 	}
 }
