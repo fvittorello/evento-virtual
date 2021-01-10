@@ -108,26 +108,46 @@ export const Form = () => {
 			<form className='form' action='' method='post' onSubmit={handleSubmit}>
 				<label className='form__label' htmlFor='name'>
 					Nombre
-					<input className='form__input' type='text' name='name' value={name} onChange={handleChange} />
+					<input
+						className={errorName ? 'form__input form__input--error' : 'form__input'}
+						type='text'
+						name='name'
+						value={name}
+						onChange={handleChange}
+					/>
 					{errorName ? <span className='form__error'>{errorName}</span> : null}
 				</label>
 
 				<label className='form__label' htmlFor='lastname'>
 					Apellido
-					<input className='form__input' type='text' name='lastname' value={lastname} onChange={handleChange} />
+					<input
+						className={errorLastname ? 'form__input form__input--error' : 'form__input'}
+						type='text'
+						name='lastname'
+						value={lastname}
+						onChange={handleChange}
+					/>
 					{errorLastname ? <span className='form__error'>{errorLastname}</span> : null}
 				</label>
 
 				<label className='form__label' htmlFor='email'>
 					Correo electrónico del trabajo
-					<input className='form__input' type='email' name='email' value={email} onChange={handleChange} />
+					<input
+						className={errorEmail ? 'form__input form__input--error' : 'form__input'}
+						type='email'
+						name='email'
+						value={email}
+						onChange={handleChange}
+					/>
 					{errorEmail ? <span className='form__error'>{errorEmail}</span> : null}
 				</label>
 
 				<label className='form__label'>
 					País
 					<select
-						className={country ? 'form__select' : 'form__select form__select--unselected'}
+						className={`form__select ${country ? '' : 'form__select--unselected'} ${
+							errorCountry ? 'form__select--error' : ''
+						}`}
 						name='country'
 						onChange={handleChange}>
 						<option className='select-option--default' value=''>
@@ -157,13 +177,25 @@ export const Form = () => {
 
 				<label className='form__label' htmlFor='phone'>
 					Número de teléfono
-					<input className='form__input' type='text' name='phone' value={phone} onChange={handleChange} />
+					<input
+						className={errorPhone ? 'form__input form__input--error' : 'form__input'}
+						type='text'
+						name='phone'
+						value={phone}
+						onChange={handleChange}
+					/>
 					{errorPhone ? <span className='form__error'>{errorPhone}</span> : null}
 				</label>
 
 				<label className='form__label' htmlFor='position'>
 					Puesto de trabajo
-					<input className='form__input' type='text' name='position' value={position} onChange={handleChange} />
+					<input
+						className={errorPosition ? 'form__input form__input--error' : 'form__input'}
+						type='text'
+						name='position'
+						value={position}
+						onChange={handleChange}
+					/>
 					{errorPosition ? <span className='form__error'>{errorPosition}</span> : null}
 				</label>
 
