@@ -32,13 +32,12 @@ export const Form = () => {
 		setErrorState({ ...errorState, [name]: '' });
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		validateInputs();
 		if (!name || !lastname || !email || !country || !phone || !position) {
 			console.warn('Form has errors');
 		} else {
-			saveToLocalStorage(formState);
 			sendFormData(formState);
 		}
 	};
@@ -78,9 +77,27 @@ export const Form = () => {
 			redirect: 'follow',
 		};
 
+		let responseOk = true;
+
 		fetch('http://localhost:5050/attendees', requestOptions)
-			.then((response) => response.text())
-			.then((result) => console.log(result))
+			.then((response) => {
+				if (response.status !== 201) {
+					setErrorState({ ...errorState, email: 'El email ya se ingresó anteriormente' });
+					responseOk = false;
+				}
+				return response.json();
+			})
+			.then((result) => {
+				console.log(result.message);
+				return responseOk;
+			})
+			.then((responseOK) => {
+				if (responseOK) {
+					saveToLocalStorage(userData);
+					setFormState(initialState);
+				}
+				return;
+			})
 			.catch((error) => console.log('error', error));
 	};
 
