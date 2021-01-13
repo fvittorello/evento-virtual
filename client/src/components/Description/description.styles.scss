@@ -1,7 +1,8 @@
 @import 'styles/variables';
 
 .description {
-	width: 666px;
+	width: 100%;
+	max-width: 37.5rem;
 	display: flex;
 	flex-direction: column;
 

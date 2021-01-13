@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useModalUpdate } from 'context/ModalContext';
 
 // Styles
 import './form.styles.scss';
@@ -15,6 +16,8 @@ export const Form = () => {
 
 	const [formState, setFormState] = useState(initialState);
 	const [errorState, setErrorState] = useState(initialState);
+
+	const toggleModal = useModalUpdate();
 
 	const { name, lastname, email, country, phone, position } = formState;
 	const {
@@ -46,7 +49,6 @@ export const Form = () => {
 		let errorStack = {};
 		for (const key in formState) {
 			errorStack[key] = textValidation(formState[key]);
-			if (textValidation(formState[key])) errorStack.hasErrors = true;
 		}
 		setErrorState(errorStack);
 	};
@@ -95,6 +97,7 @@ export const Form = () => {
 				if (responseOK) {
 					saveToLocalStorage(userData);
 					setFormState(initialState);
+					toggleModal();
 				}
 				return;
 			})

@@ -2,19 +2,23 @@
 
 @mixin containerMixin {
 	width: 593px;
-	height: 42px;
+	max-width: 80vw;
+	height: auto;
 	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: space-between;
 	align-items: center;
+	gap: 0.75rem;
 }
 
 .sponsors-container {
 	@include containerMixin;
 
 	&--bottom {
-		margin-top: 92px;
+		margin-top: 5.75rem;
 		@include containerMixin;
+		margin-bottom: 3rem;
 	}
 }
 
@@ -36,5 +40,11 @@
 	}
 	&-zendesk {
 		width: 78px;
+	}
+}
+
+@media (mix-width: $screenLg) {
+	.sponsors-container--bottom {
+		margin-bottom: 0;
 	}
 }

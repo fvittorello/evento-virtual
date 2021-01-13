@@ -1,22 +1,30 @@
-import { useState } from 'react';
+import { useModal, useModalUpdate } from 'context/ModalContext';
 
 // Styles
 import './modal.styles.scss';
 
-export const Modal = ({ handleClose, show, children }) => {
-	const showHideClassName = show ? 'modal-container display-block' : 'modal-container display-none';
+export const Modal = () => {
+	const rootElement = document.body;
+	const modal = useModal();
+	const toggleModal = useModalUpdate();
+
+	if (modal) {
+		window.scrollTo(0, 0);
+		rootElement.classList.add('lock');
+	} else {
+		rootElement.classList.remove('lock');
+	}
 
 	return (
-		// <div className='modal-container'>
-		<div className={showHideClassName}>
-			<div className='modal'>
-				<button type='button' className='modal__close-button' onClick={handleClose}>
+		<div className={modal ? 'modal-container' : 'hidden'} onClick={toggleModal}>
+			<div className='modal' onClick={(e) => e.stopPropagation()}>
+				<button type='button' className='modal__close-button' onClick={toggleModal}>
 					&#10005;
 				</button>
 				<div className='modal__content'>
-					<h3 className='modal__title'>Obrigado pelo seu interesse.</h3>
+					<h3 className='modal__title'>Gracias por su interés.</h3>
 					<p className='modal__description'>
-						Entraremos em contato com você em breve no e-mail que você preencheu no formulário
+						Estaremos en contacto con usted en breve a través del correo que ingresó en el formulario
 					</p>
 				</div>
 			</div>

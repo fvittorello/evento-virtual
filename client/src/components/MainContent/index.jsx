@@ -7,9 +7,11 @@ import './mainContent.styles.scss';
 
 export const MainContent = () => {
 	return (
-		<div className='main-content'>
-			<Description />
-			<Form />
+		<div className='outside-container'>
+			<div className='main-content'>
+				<Description />
+				<Form />
+			</div>
 		</div>
 	);
 };
