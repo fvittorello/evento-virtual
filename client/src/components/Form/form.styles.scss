@@ -1,0 +1,108 @@
+@import 'styles/variables';
+
+.form-container {
+	width: 100%;
+	min-width: 370px;
+	max-width: 463px;
+	height: max-content;
+	padding: 2.375rem 3rem;
+	background: $colorWhiteBackground;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cta {
+	margin-bottom: 1.5rem;
+	font-family: $sourceSans;
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: $colorGreenStrong;
+	text-align: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&__label {
+		margin-top: 1.5rem;
+		font-family: $sourceSans;
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: $colorGreenStrong;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	}
+
+	&__input,
+	&__select {
+		height: 3.125rem;
+		border: solid 1px $colorGreyMedium;
+		font-family: $sourceSans;
+		font-size: 1.25rem;
+		padding: 0.625rem;
+		border-radius: 0.125rem;
+
+		&--error {
+			border: solid 1px $colorRed;
+		}
+	}
+
+	&__select {
+		font-size: 1rem;
+		position: relative;
+
+		// Select Button
+		appearance: none;
+		background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGhlaWdodD0iMTI4cHgiIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjggMTI4OyIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTI4IDEyOCIgd2lkdGg9IjEyOHB4IiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48Zz48bGluZSBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMkYzNDM1O3N0cm9rZS13aWR0aDoxMjtzdHJva2UtbGluZWNhcDpzcXVhcmU7c3Ryb2tlLW1pdGVybGltaXQ6MTA7IiB4MT0iMTExIiB4Mj0iNjQiIHkxPSI0MC41IiB5Mj0iODcuNDk5Ii8+PGxpbmUgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzJGMzQzNTtzdHJva2Utd2lkdGg6MTI7c3Ryb2tlLWxpbmVjYXA6c3F1YXJlO3N0cm9rZS1taXRlcmxpbWl0OjEwOyIgeDE9IjY0IiB4Mj0iMTciIHkxPSI4Ny40OTkiIHkyPSI0MC41Ii8+PC9nPjwvc3ZnPg==')
+			no-repeat 95%;
+		background-size: 0.75rem;
+
+		&--unselected {
+			color: $colorGreyMedium;
+		}
+	}
+
+	&__button {
+		height: 3.125rem;
+		margin-top: 2.25rem;
+		background: $colorGreenStrong;
+		color: $colorWhite;
+		border: none;
+		font-family: $sourceSans;
+		font-weight: 600;
+		font-size: 1.25rem;
+		cursor: pointer;
+		transition: background ease 0.1s;
+
+		&:hover {
+			background: $colorOrange;
+		}
+	}
+
+	&__error {
+		color: $colorRed;
+		position: absolute;
+		bottom: -1.25rem;
+		font-family: $sourceSans;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
+}
+
+.select-option {
+	color: $colorGreenStrong;
+
+	&--default {
+		color: $colorGreyMedium;
+	}
+}
+
+@media (min-width: $screenLg) {
+	.form-container {
+		margin-left: 2rem;
+	}
+}

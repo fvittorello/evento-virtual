@@ -1,0 +1,26 @@
+@import 'styles/variables';
+
+.social-media {
+	width: 342px;
+	height: 52px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	&__link {
+		width: 48px;
+		height: 48px;
+		border-radius: 24px;
+		background: $colorGreySoftSecondary;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background ease 0.1s;
+
+		&:hover {
+			background: $colorGreyMedium;
+			transition: background ease 0.1s;
+		}
+	}
+}

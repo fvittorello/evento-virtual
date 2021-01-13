@@ -1,0 +1,113 @@
+@import 'styles/variables';
+
+.header {
+	min-height: 13.75rem;
+	max-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+
+	&__category {
+		width: 5.5rem;
+		height: 1.75rem;
+		margin-top: 0.875rem;
+		background: $colorOrange;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0.25rem;
+		font-family: $sourceSans;
+		font-size: 0.875rem;
+		font-weight: 700;
+		color: $colorWhite;
+		text-transform: uppercase;
+		letter-spacing: 0.05rem;
+	}
+
+	&__title {
+		margin-top: 1rem;
+		font-size: 1.25rem;
+		line-height: 1.375rem;
+		font-family: $sourceSans;
+		color: $colorGreenStrong;
+		text-align: center;
+	}
+
+	&__subtitle {
+		margin-top: 1rem;
+		font-size: 1.25rem;
+		line-height: 1.375rem;
+		text-align: center;
+		font-style: italic;
+		font-family: $sourceSans;
+		color: $colorGreenStrong;
+	}
+
+	&__text {
+		margin-top: 1.25rem;
+		font-family: $sourceSans;
+		font-size: 0.875rem;
+		font-weight: 600;
+		text-align: center;
+		text-transform: uppercase;
+		color: $colorGreenMedium;
+	}
+}
+
+@media (min-width: $screenMd) {
+	.header {
+		height: 17.5rem;
+
+		&__category {
+			width: 5.5rem;
+			height: 1.75rem;
+			margin-top: 1.5rem;
+			font-size: 0.875rem;
+		}
+
+		&__title {
+			margin-top: 1.625rem;
+			font-size: 1.625rem;
+		}
+
+		&__subtitle {
+			margin-top: 1rem;
+			font-size: 1.625rem;
+			line-height: 2rem;
+		}
+
+		&__text {
+			margin-top: 1.25rem;
+			font-size: 1rem;
+		}
+	}
+}
+
+@media (min-width: $screenLg) {
+	.header {
+		height: 350px;
+
+		&__category {
+			margin-top: 4rem;
+			font-size: 0.875rem;
+		}
+
+		&__title {
+			margin-top: 1.625rem;
+			font-size: 2.5rem;
+			line-height: 2.5rem;
+		}
+
+		&__subtitle {
+			margin-top: 1.625rem;
+			font-size: 2.5rem;
+			line-height: 2.5rem;
+		}
+
+		&__text {
+			margin-top: 20px;
+			font-size: 1.375rem;
+		}
+	}
+}

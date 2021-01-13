@@ -1,0 +1,33 @@
+@import 'styles/variables';
+
+.main-content {
+	max-width: 1140px;
+	margin: 5.375rem 2rem 0 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.outside-container {
+	max-width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	padding: 0 2rem;
+}
+
+@media (min-width: $screenLg) {
+	.main-content {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.outside-container {
+		width: 100vw;
+		height: auto;
+		display: flex;
+		justify-content: center;
+	}
+}

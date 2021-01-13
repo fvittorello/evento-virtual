@@ -1,0 +1,54 @@
+@import 'styles/variables';
+
+.speaker {
+	width: auto;
+	height: 74px;
+	margin-top: 33px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	&__img {
+		width: 74px;
+		height: 74px;
+		object-fit: cover;
+		border-radius: 37px;
+		background: $colorGreySoft;
+	}
+
+	&__details {
+		margin-left: 29px;
+		height: 56px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__name {
+		font-family: $sourceSans;
+		font-weight: 600;
+		font-size: 1.25rem;
+		line-height: 1.625rem;
+		color: $colorGreenStrong;
+	}
+
+	&__position {
+		font-family: $sourceSans;
+		font-weight: 400;
+		font-size: 1rem;
+		line-height: 1.625rem;
+		color: $colorGreenStrong;
+	}
+}
+
+.no-image {
+	width: 74px;
+	height: 74px;
+	object-fit: cover;
+	border-radius: 37px;
+	background: $colorGreySoft;
+}
+
+.first {
+	margin-top: 0;
+}

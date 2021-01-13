@@ -1,0 +1,16 @@
+@import 'styles/variables';
+
+.description {
+	width: 100%;
+	max-width: 37.5rem;
+	display: flex;
+	flex-direction: column;
+
+	&__text {
+		margin-top: 2.5rem;
+		font-family: $quicksand;
+		color: $colorGreenSoft;
+		font-weight: 400;
+		font-size: 1rem;
+	}
+}

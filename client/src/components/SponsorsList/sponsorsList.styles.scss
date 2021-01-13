@@ -1,0 +1,50 @@
+@import 'styles/variables';
+
+@mixin containerMixin {
+	width: 593px;
+	max-width: 80vw;
+	height: auto;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.sponsors-container {
+	@include containerMixin;
+
+	&--bottom {
+		margin-top: 5.75rem;
+		@include containerMixin;
+		margin-bottom: 3rem;
+	}
+}
+
+.logo {
+	&-clusterfinanciero {
+		width: 89px;
+	}
+	&-asobanca {
+		width: 83px;
+	}
+	&-ibpf {
+		width: 69px;
+	}
+	&-hightelecom {
+		width: 137px;
+	}
+	&-ebanx {
+		width: 69px;
+	}
+	&-zendesk {
+		width: 78px;
+	}
+}
+
+@media (mix-width: $screenLg) {
+	.sponsors-container--bottom {
+		margin-bottom: 0;
+	}
+}
