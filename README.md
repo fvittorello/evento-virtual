@@ -14,7 +14,7 @@ git clone https://github.com/fvittorello/evento-virtual.git
 
 ### 2 - Instalación de dependencias
 
-Con la consola posicionada dentro de la carpeta /client y luego /server repetir el siguiente comando
+Con la consola posicionada dentro de la carpeta `/client` y luego `/server` repetir el siguiente comando
 
 ```
 npm install
@@ -40,3 +40,9 @@ DB_NAME = evento_virtual
 DB_PASS = ''
 DB_PORT = 3306
 ```
+
+- Con la consola posicionada en la carpeta `/server` correr el comando `npm run start`.
+
+### 6 - Iniciar el frontend
+
+- Posicionandosé en la carpeta `/client` correr el comando `npm start`, esto iniciará el proyecto en el navegador por defecto en el puerto `3000`.
